@@ -33,3 +33,6 @@ done
 
 echo $'\n'"Computations Sorted in Descending Order: "
 sort -nr <(printf "%.2f\n" "${arr[@]}")
+
+echo $'\n'"Computations Sorted in Ascending Order: "
+sort -n <(printf "%.2f\n" "${arr[@]}")
