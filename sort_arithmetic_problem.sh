@@ -30,3 +30,6 @@ done
 for (( i = 0; i < 4; i++ )); do
 	arr[$i]=${resultDict[$i]}
 done
+
+echo $'\n'"Computations Sorted in Descending Order: "
+sort -nr <(printf "%.2f\n" "${arr[@]}")
