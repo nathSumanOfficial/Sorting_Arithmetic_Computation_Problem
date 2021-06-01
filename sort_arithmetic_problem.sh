@@ -8,3 +8,4 @@ read b
 read c 
 
 result1=`echo | awk "{print $a+$b*$c}"`
+result2=`echo | awk "{print $a*$b+$c}"`
