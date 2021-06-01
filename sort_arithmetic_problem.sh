@@ -1,13 +1,29 @@
-#!/bin/bash
+#!/bin/bash 
 
-echo "Arithmetic Computation & Sorting"
+echo $'\n'"Arithmetic Computation & Sorting"
 
-echo "Enter three numbers: "
+echo $'\n'"Enter three numbers: "
 read a
 read b
 read c 
 
-result1=`echo | awk "{print $a+$b*$c}"`
-result2=`echo | awk "{print $a*$b+$c}"`
-result3=`echo | awk "{print $c+$a/$b}"`
-result4=`echo | awk "{print $a%$b+$c}"`
+declare -A resultDict
+
+for (( i = 0; i < 4; i++ )); do
+	case $i in
+		0)	result=`echo | awk "{print $a+$b*$c}"`
+			resultDict[$i]=$result
+			;;
+		1)	result=`echo | awk "{print $a*$b+$c}"`
+			resultDict[$i]=$result
+			;;
+		2)	result=`echo | awk "{print $c+$a/$b}"`
+			resultDict[$i]=$result
+			;;
+		3)	result=`echo | awk "{print $a%$b+$c}"`
+			resultDict[$i]=$result
+			;;
+	esac
+done
+
+echo ${resultDict[@]}
